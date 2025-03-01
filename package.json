@@ -8,6 +8,7 @@
     "build":"parcel build index2.html",
     "test": "jest"
   },
+  
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Ritik2004/Namaste_Raect.git"

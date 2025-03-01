@@ -1,6 +1,8 @@
 const RestroCard = (prop) => {
     const{resData} = prop;
-    const {name, cuisine,rating,order} = resData?.info;
+
+    const {name, cuisines,avgRating,order} = resData?.info;
+
     return (
 
       <div className='res-card'>
@@ -9,9 +11,13 @@ const RestroCard = (prop) => {
         className='res-logo'
       />
         <h3>{name}</h3>
-        <h4>{cuisine.map((val)=>val.name).join(',')}</h4>
-        <h4>{rating.aggregate_rating}</h4>
-        <h4>{resData.order.deliveryTime}</h4>
+        <h4>
+  {cuisines.length > 3 
+    ? cuisines.slice(0, 4).join(", ") + "..." 
+    : cuisines.join(", ")}
+</h4>
+        <h4>{avgRating}</h4>
+        <h4>{resData?.info?.sla?.deliveryTime} Minutes</h4>
       </div>   
     )
 }
