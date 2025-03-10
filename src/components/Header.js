@@ -1,7 +1,14 @@
 
-import { useState } from "react"
+import { useState,useContext } from "react"
+import { Link } from "react-router"
+import useOnlinestatus from "../utils/useOnlinestatus"
+import UserContext from "../utils/UserContext"
 const Header = () => {
     const[btnNamereact, setbtnNamereact] = useState("Login")
+    const onlineStatus = useOnlinestatus();
+
+    const data = useContext(UserContext);
+    console.log(data)
     return (
         <div className='header'>
             <div>
@@ -9,15 +16,18 @@ const Header = () => {
             </div>
             <div className='nav-items'>
                 <ul>
-                    <li>Home</li>
-                    <li>About us</li>
-                    <li>Contact us</li>
+                    <li>Online Status:{onlineStatus?"✅":"⛔"}</li>
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/about">About us</Link></li>
+                    <li><Link to="/contact">Contact us</Link></li>
+                    <li><Link to="/grocery">Grocery</Link></li>
                     <li>Cart</li>
                     <button onClick={()=>{
                         btnNamereact === 'Login' 
                         ?setbtnNamereact("Logout")
                         :setbtnNamereact("Login")
                     }} className="login">{btnNamereact}</button>
+                    <li className="px-4 font-bold">{data.loggedInUser}</li>
                 </ul>
             </div>
         </div>

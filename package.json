@@ -4,11 +4,10 @@
   "description": "This is namaste react.",
   "main": "App2.js",
   "scripts": {
-    "start":"parcel index2.html",
-    "build":"parcel build index2.html",
+    "start": "parcel index2.html",
+    "build": "parcel build index2.html",
     "test": "jest"
   },
-  
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Ritik2004/Namaste_Raect.git"
@@ -24,10 +23,13 @@
     "process": "^0.11.10"
   },
   "dependencies": {
+    "@tailwindcss/postcss": "^4.0.11",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.2.0",
+    "tailwindcss": "^4.0.11"
   },
-  "browserlist":[
+  "browserlist": [
     "last 2 versions"
   ]
 }

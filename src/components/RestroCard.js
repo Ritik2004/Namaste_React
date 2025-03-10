@@ -20,6 +20,23 @@ const RestroCard = (prop) => {
         <h4>{resData?.info?.sla?.deliveryTime} Minutes</h4>
       </div>   
     )
+} 
+
+//Here we will use a higher order component name withPromotedLabel
+//It will take RestroCard as input and will return RestroCardPromoted which is a enhance functional component   
+
+export const withPromotedLabel = (RestroCard)=>{
+ return (props)=>{
+   return (
+    <div>
+      <label className="text-decoration:none absolute bg-black text-white m-4 p-2 rounded-lg">Promoted</label>
+      <RestroCard {...props}/>
+    </div>
+   )
+ }
 }
+
+
+
 
 export default RestroCard

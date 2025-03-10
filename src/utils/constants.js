@@ -1756,3 +1756,4 @@ export const data =
         }
     ]
 
+export const menu_url = "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9121181&lng=77.6445548&restaurantId="
